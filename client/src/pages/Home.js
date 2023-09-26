@@ -6,6 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faFlag, faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+  };
   const imageStyle = {
     backgroundImage: `url(${HomepageImage})`,
     backgroundSize: "cover",
@@ -171,49 +175,101 @@ function Home() {
     <div className="row">
       {/* Review Card 1 */}
       <div className="col-md-4">
-        <div className="review-card">
-          <div className="review-avatar">
-            {/* Add an avatar image if desired */}
-          </div>
-          <h3 className="review-title">Excellent Service</h3>
-          <p className="review-text">
-            Opulence provided an excellent cleaning service for my home. 
-            They paid attention to every detail, and my house has never looked cleaner.
-          </p>
-          <p className="review-author">- Sophia Martinez</p>
-        </div>
-      </div>
+  <div className="review-card">
+    <div className="review-avatar">
+      {/* Add an avatar image here if desired */}
+      
+    </div>
+    <div className="review-content">
+      <h3 className="review-title">Excellent Service</h3>
+      <p className="review-text">
+        Opulence provided an excellent cleaning service for my home. 
+        They paid attention to every detail, and my house has never looked cleaner.
+      </p>
+      <p className="review-author">- Sophia Martinez</p>
+    </div>
+  </div>
+</div>
       {/* Review Card 2 */}
       <div className="col-md-4">
-        <div className="review-card">
-          <div className="review-avatar">
-            {/* Add an avatar image if desired */}
-          </div>
-          <h3 className="review-title">Highly Recommended</h3>
-          <p className="review-text">
-            I'm extremely satisfied with Opulence's cleaning service. 
-            Their attention to detail and professionalism are unmatched.
-          </p>
-          <p className="review-author">- Emily Johnson</p>
-        </div>
-      </div>
-      {/* Review Card 3 */}
-      <div className="col-md-4">
-        <div className="review-card">
-          <div className="review-avatar">
-            {/* Add an avatar image if desired */}
-          </div>
-          <h3 className="review-title">Great Experience</h3>
-          <p className="review-text">
+  <div className="review-card">
+    <div className="review-avatar">
+      {/* Add an avatar image here if desired */}
+      
+    </div>
+    <div className="review-content">
+      <h3 className="review-title">Excellent Service</h3>
+      <p className="review-text">
             Opulence made my home spotless! I'm very impressed with their cleaning service. 
             I highly recommend them.
           </p>
           <p className="review-author">- Michael Anderson</p>
-        </div>
-      </div>
+    </div>
+  </div>
+</div>
+      {/* Review Card 3 */}
+      <div className="col-md-4">
+  <div className="review-card">
+    <div className="review-avatar">
+      {/* Add an avatar image here if desired */}
+      
+    </div>
+    <div className="review-content">
+      <h3 className="review-title">Excellent Service</h3>
+      <p className="review-text">
+            I'm extremely satisfied with Opulence's cleaning service. 
+            Their attention to detail and professionalism are unmatched.
+          </p>
+          <p className="review-author">- Emily Johnson</p>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </section>
+
+<section className="py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <form onSubmit={handleSubmit}>
+              {/* Email Input */}
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              {/* Full Name Input */}
+              <div className="mb-3">
+                <label htmlFor="fullName" className="form-label">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="fullName"
+                  placeholder="Enter your full name"
+                />
+              </div>
+              {/* Submit Button */}
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
     </main>
   );
 }

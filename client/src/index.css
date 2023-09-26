@@ -390,34 +390,49 @@ input:focus {
 }
 
 /* CSS for each card */
-.card {
-  flex: 0 0 calc(30% - 20px); /* Adjust the width and margin as needed */
-  margin: 10px; /* Add margin to each card */
-  border: none;
-  flex-direction: column;
-  
-  /* Other card styles */
+/* CSS for your card container */
+/* Updated styles for the card container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -10px;
 }
 
-/* Styles for the card icons */
-.card-icon {
-  font-size: 24px;
-  color: #333;
+/* Updated styles for each card */
+.card {
+  flex: 1 1 calc(30% - 20px);
+  margin: 10px;
+  border: none;
+  padding: 20px;
   text-align: center;
-  margin-bottom: 10px;
+  border-radius: 10px; /* Add border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* Styles for the card icons (image icons) */
+.card-icon img {
+  max-width: 50px; /* Adjust the image size as needed */
+  margin-right: auto; /* Move the image to the left */
+  margin-left: auto;
 }
 
 /* Styles for card titles */
 .card-title {
-  font-size: 20px;
+  font-size: 18px; /* Reduce the font size */
   font-weight: bold;
+  margin-top: 20px; /* Add spacing between icon and title */
+  color: #333;
   text-align: center;
 }
 
 /* Styles for card text */
 .card-text {
-  font-size: 16px;
+  font-size: 14px; /* Reduce the font size */
   text-align: center;
+  color: #666;
+  margin-top: 10px;
 }
 
 /* Media query for screens larger than 768px */
@@ -490,16 +505,38 @@ input:focus {
 .review-card {
   background-color: #fff;
   border: 2px solid #000; /* Black outline */
-  border-radius: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
   margin-bottom: 20px; /* Add margin to the bottom for spacing on mobile */
+  display: flex; /* Display items in a row */
+  align-items: flex-start; /* Align items to the top of the container */
 }
 
-/* Styles for the review titles */
+/* CSS for the review avatar (image) */
+.review-avatar {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make the avatar round */
+  overflow: hidden; /* Hide overflowing content (if the image is larger) */
+  margin-right: 15px; /* Add margin to separate it from text */
+}
+
+.review-avatar img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CSS for the review content (text) */
+.review-content {
+  flex-grow: 1; /* Allow the content to grow to fill the remaining space */
+  text-align: left; /* Align text to the left */
+}
+
+/* Styles for the review title */
 .review-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: #000; /* Black color for titles */
 }
@@ -508,30 +545,14 @@ input:focus {
 .review-text {
   font-size: 16px;
   color: #666;
-  margin-top: 10px;
 }
 
 /* Styles for the review author */
 .review-author {
   font-size: 14px;
-  font-style: italic;
-  color: #444;
+  color: #333;
   margin-top: 10px;
 }
-
-/* Styles for the review avatar (round image icon) */
-.review-avatar {
-  width: 60px;
-  height: 60px;
-  background-color: #333; /* Background color for the avatar */
-  border-radius: 50%; /* Makes it round */
-  margin: 0 auto 15px; /* Centered with some bottom margin */
-  /* Add background image URL if you have avatar images */
-  /* background-image: url('your-avatar-image.jpg'); */
-  /* background-size: cover; */
-  /* background-position: center; */
-}
-
 /* Styles for the review star icons */
 .review-stars {
   font-size: 20px;
@@ -539,10 +560,33 @@ input:focus {
   margin-bottom: 10px;
 }
 
+/* Default layout: Stacked on smaller screens */
+/* Default stacked layout */
+.row {
+  flex-direction: column;
+}
+.row {
+  flex-direction: column;
+}
+/* Horizontal layout for screens wider than 768px */
+@media (min-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-@media (min-width: 992px) {
-  /* Adjust the width or scale the elements as desired */
-  .review-card {
-    width: 30%; /* Adjust the width for the side reviews */
+  .col-md-6 {
+    flex: 0 0 calc(50% - 15px); /* Adjust the width and margin as needed */
+    margin-right: 30px; /* Adjust margin as needed */
+  }
+
+  .col-md-6:last-child {
+    margin-right: 0;
   }
 }
+
+
+
+
+
